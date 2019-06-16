@@ -19,11 +19,7 @@ def contain_a(array)
 end
 
 def first_wa(array)
-  array.each do |element|
-    if element[0, 2] == "wa"
-      return element
-    end
-  end
+  array.find { |element| element[0, 2] == "wa"}
 end
 
 def remove_non_strings(array)
