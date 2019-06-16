@@ -27,10 +27,5 @@ def first_wa(array)
 end
 
 def remove_non_strings(array)
-  array.each do |element|
-    if element.is_a?(Symbol)
-      array.delete(element)
-    end
-  end
-  array
+  array.reject! { |element| !element.is_a?(String)}
 end
