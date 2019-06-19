@@ -27,12 +27,12 @@ end
 
 def merge_data(keys, data)
   merged_data = []
-  #keys.each do |key, 
+  count = 0
   keys.each do |person|
-    if keys[0][:first_name] == "blake"
-      merged_data << keys[0].merge(data[0]["blake"])
+    if keys[count][:first_name] == data[0].keys[count]
+      merged_data << keys[count].merge(data[0][keys[count][:first_name]])
     end
+    count += 1
   end
   merged_data
-
 end
