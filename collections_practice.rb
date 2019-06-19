@@ -36,3 +36,11 @@ def merge_data(keys, data)
   end
   merged_data
 end
+
+def find_cool(array)
+  array.select {|element| element[:temperature] == "cool"}
+end
+
+def organize_schools(array)
+  array
+end
