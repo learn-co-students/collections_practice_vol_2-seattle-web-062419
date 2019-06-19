@@ -25,6 +25,14 @@ def count_elements(array)
   count_array
 end
 
-def merge_data(data1, data2)
-  data1.push(data2.to_s).flatten
+def merge_data(keys, data)
+  merged_data = []
+  #keys.each do |key, 
+  keys.each do |person|
+    if keys[0][:first_name] == "blake"
+      merged_data << keys[0].merge(data[0]["blake"])
+    end
+  end
+  merged_data
+
 end
