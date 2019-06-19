@@ -41,6 +41,14 @@ def find_cool(array)
   array.select {|element| element[:temperature] == "cool"}
 end
 
-def organize_schools(array)
-  array
+def organize_schools(school_hash)
+  organized_schools = {}
+  school_hash.each do |school, locations|
+    #if locations[:location] == 
+    organized_schools[locations[:location]] = school_hash.keys.select{|sh_school| school_hash[school].include?(sh_school)}
+  end
+  #array.values
+  organized_schools
+  #school_hash
+  
 end
