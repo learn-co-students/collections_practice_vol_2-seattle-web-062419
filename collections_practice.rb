@@ -1,4 +1,5 @@
 # your code goes here
+require "pry"
 def begins_with_r(array)
   array.all? {|element| element.start_with?("r")}
 end
@@ -41,14 +42,21 @@ def find_cool(array)
   array.select {|element| element[:temperature] == "cool"}
 end
 
-def organize_schools(school_hash)
-  organized_schools = {}
-  school_hash.each do |school, locations|
-    #if locations[:location] == 
-    organized_schools[locations[:location]] = school_hash.keys.select{|sh_school| school_hash[school].include?(sh_school)}
-  end
+#def organize_schools(school_hash)
+#  organized_schools = {}
+#  school_hash.each do |school, locations|
+#    #if locations[:location] == 
+#    organized_schools[locations[:location]] = school_hash.keys.select{|sh_school| school_hash[school].include?(sh_school)}
+    #binding.pry
+#  end
   #array.values
-  organized_schools
-  #school_hash
-  
-end
+#  organized_schools
+#  school_hash
+#  
+#end
+def organize_schools(school_hash)
+  locations = {}
+  school_hash.values.each { |location| locations[location.values[0]] = [] }
+  school_hash.each { |school, location| locations[location.values[0]] << school }
+  locations
+end 
